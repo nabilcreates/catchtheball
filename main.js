@@ -3,7 +3,7 @@ var score = 0;
 var e = {
     x: 50,
     y: 30,
-    d: 10,
+    d: 50,
 }
 
 var cursor = {
