@@ -1,9 +1,9 @@
 var score = 0;
 
 var e = {
-	x: 50,
-	y: 30,
-	d: 10,
+    x: 50,
+    y: 30,
+    d: 10,
 }
 
 var cursor = {
@@ -15,28 +15,33 @@ var cursor = {
 var speed = 5;
 
 function setup() {
-  createCanvas(600, 400);
+    createCanvas(600, 400);
 }
 
 function draw() {
-  background(0);
-	checkForIntersect()
-	
-	e.x += random(0,speed)
-	e.y += random(0,speed)
-	
-    ellipse(e.x,e.y,e.d)
+    background(0);
+
+    // DISPLAY SCORE
+    fill(255)
+    text(score, 10, 30);
+
+    checkForIntersect()
+
+    e.x += random(0, speed)
+    e.y += random(0, speed)
+
+    ellipse(e.x, e.y, e.d)
 
     cursor.x = mouseX;
     cursor.y = mouseY;
     cursor.d = 20;
-    ellipse(cursor.x,cursor.y,cursor.d)
+    ellipse(cursor.x, cursor.y, cursor.d)
 
     checkOutOfCanvas()
 }
 
-function checkForIntersect(){
-	if(dist(cursor.x, cursor.y, e.x ,e.y) <= e.d){
+function checkForIntersect() {
+    if (dist(cursor.x, cursor.y, e.x, e.y) <= e.d) {
         console.log('hit')
 
         score++
@@ -44,11 +49,11 @@ function checkForIntersect(){
 
         e.x = random(width)
         e.y = random(height)
-	}
+    }
 }
 
-function checkOutOfCanvas(){
-    if(e.x > width || e.y > height){
+function checkOutOfCanvas() {
+    if (e.x > width || e.y > height) {
         console.log('out')
         e.x = random(width)
         e.y = random(height)
