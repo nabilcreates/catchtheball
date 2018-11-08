@@ -34,9 +34,8 @@ function draw() {
     checkOutOfCanvas()
     checkLevel()
 
-    // MAKE E.X AND E.Y RANDOM (SO IT MOVES RANDOMLY)
-    e.x += random(0, speed)
-    e.y += random(0, speed)
+    // RUN THE MOVE FUNCTION
+    move()
 
     // DRAW THE ELLIPSE
     ellipse(e.x, e.y, e.d)
@@ -59,9 +58,9 @@ function checkForIntersect() {
         // ADD THE SCORE
         score++
 
-        // E.X AND E.Y FO TO RANDOM LOCATION (Minus 200 because sometimes it will spawn at the end of the canvas)
-        e.x = random(width - 200)
-        e.y = random(height - 200)
+        // RUN THE SPAWN FUNCTION
+        spawn()
+
     }
 }
 
@@ -73,9 +72,8 @@ function checkOutOfCanvas() {
         // THEN CONSOLE LOG OUT
         console.log('out')
 
-        // E.X AND E.Y GO TO RANDOM LOCATION (Minus 200 because sometimes it will spawn at the end of the canvas)
-        e.x = random(width - 200)
-        e.y = random(height - 200)
+        // RUN THE SPAWN FUNCTION
+        spawn()
 
         // SCORE = 0
         score = 0;
@@ -83,34 +81,46 @@ function checkOutOfCanvas() {
 }
 
 // INCREASES THE SPEED (DIFICULTY ACCORDING TO SCORE)
-function checkLevel(){
+function checkLevel() {
 
-    switch(score){
+    switch (score) {
 
         case 0:
-        speed = 1;
-        level = "BEGINNER"
-        break;
-        
+            speed = 1;
+            level = "BEGINNER"
+            break;
+
         case 5:
-        speed = 2;
-        level = "MMHMM..."
-        break;
+            speed = 2;
+            level = "MMHMM..."
+            break;
 
         case 7:
-        speed = 3;
-        level = "shiiiiiiit..."
-        break;
-        
+            speed = 3;
+            level = "shiiiiiiit..."
+            break;
+
         case 10:
-        speed = 5;
-        level = "DAAAAAAAAAAAAAAAMN"
-        break;
+            speed = 5;
+            level = "DAAAAAAAAAAAAAAAMN"
+            break;
 
         case 15:
-        speed = 9;
-        level = "HOLDING UP GOOD?"
-        break;
+            speed = 9;
+            level = "HOLDING UP GOOD?"
+            break;
     }
-    
+
+}
+
+function spawn() {
+    e.x = random(width - 200)
+    e.y = random(height - 200)
+}
+
+function move() {
+
+    // MAKE E.X AND E.Y RANDOM (SO IT MOVES RANDOMLY TO THE RIGHT)
+    e.x += random(0, speed)
+    e.y += random(0, speed)
 }
