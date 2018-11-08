@@ -15,7 +15,7 @@ var cursor = {
 
 // SPEED IS THE SAME AS DIFFICULTY
 var speed = 2;
-var level = 'BEGINNER'
+var difficulty = 'BEGINNER'
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
@@ -27,7 +27,7 @@ function draw() {
     // DISPLAY SCORE
     fill(255)
     text('Score: ' + score, 10, 30);
-    text('Difficulty: ' + level, 10, 50);
+    text('Difficulty: ' + difficulty, 10, 50);
 
 
     // RUN FUNCTIONS (BELOW)
@@ -91,27 +91,27 @@ function checkLevel() {
 
         case 0:
             speed = 1;
-            level = "BEGINNER"
+            difficulty = "BEGINNER"
             break;
 
         case 5:
             speed = 2;
-            level = "MMHMM..."
+            difficulty = "MMHMM..."
             break;
 
         case 7:
             speed = 3;
-            level = "shiiiiiiit..."
+            difficulty = "shiiiiiiit..."
             break;
 
         case 10:
             speed = 5;
-            level = "DAAAAAAAAAAAAAAAMN"
+            difficulty = "DAAAAAAAAAAAAAAAMN"
             break;
 
         case 15:
             speed = 9;
-            level = "HOLDING UP GOOD?"
+            difficulty = "HOLDING UP GOOD?"
             break;
     }
 
