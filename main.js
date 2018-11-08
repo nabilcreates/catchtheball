@@ -95,17 +95,17 @@ function checkLevel() {
             break;
 
         case 5:
-            speed = 2;
+            speed = 2.5;
             difficulty = "MMHMM..."
             break;
 
         case 7:
-            speed = 3;
+            speed = 5;
             difficulty = "shiiiiiiit..."
             break;
 
         case 10:
-            speed = 5;
+            speed = 7;
             difficulty = "DAAAAAAAAAAAAAAAMN"
             break;
 
