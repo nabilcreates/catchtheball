@@ -9,7 +9,8 @@ var e = {
 var cursor = {
     x: null,
     y: null,
-    d: 10,
+    sx: 50,
+    sy: 50,
 }
 
 // SPEED IS THE SAME AS DIFFICULTY
@@ -43,8 +44,9 @@ function draw() {
     // DRAW CURSOR
     cursor.x = mouseX;
     cursor.y = mouseY;
-    cursor.d = 20;
-    ellipse(cursor.x, cursor.y, cursor.d)
+    cursor.sx = 20;
+    cursor.sy = 20;
+    rect(cursor.x - cursor.sx/2, cursor.y - cursor.sy/2, cursor.sx, cursor.sy)
 
 }
 
