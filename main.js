@@ -46,6 +46,8 @@ function draw() {
     cursor.y = mouseY;
     cursor.sx = 20;
     cursor.sy = 20;
+
+    // MINUS CURSOR.SX/2 IS BECAUSE IT DISPLAYS THAT THE CURSOR POINTER IS ON THE TOP LEFT, SO WE MINUS IT MY THE WIDTH / 2 SO THAT THE CURSOR WILL DISPLAY IN THE CENTER (SAME FOR CURSOR.SY)
     rect(cursor.x - cursor.sx/2, cursor.y - cursor.sy/2, cursor.sx, cursor.sy)
 
 }
