@@ -51,7 +51,7 @@ function draw() {
 
 function checkForIntersect() {
     // CHECK IF THE BALL INTERSECTS WITH THE CURSOR
-    if (dist(cursor.x, cursor.y, e.x, e.y) <= e.d) {
+    if (dist(cursor.x, cursor.y, e.x, e.y) <= e.d / 2) {
 
         // IF YES, CONSOLE LOG HIT
         console.log('hit')
