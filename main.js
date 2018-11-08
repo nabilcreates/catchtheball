@@ -12,6 +12,8 @@ var cursor = {
     d: 10,
 }
 
+var speed = 5;
+
 function setup() {
   createCanvas(600, 400);
 }
@@ -20,8 +22,8 @@ function draw() {
   background(0);
 	checkForIntersect()
 	
-	e.x += random(0,9)
-	e.y += random(0,9)
+	e.x += random(0,speed)
+	e.y += random(0,speed)
 	
     ellipse(e.x,e.y,e.d)
 
@@ -40,13 +42,15 @@ function checkForIntersect(){
         score++
         console.log(score)
 
-        e.x = 50;
-        e.y = 30;
+        e.x = random(width)
+        e.y = random(height)
 	}
 }
 
 function checkOutOfCanvas(){
     if(e.x > width || e.y > height){
         console.log('out')
+        e.x = random(width)
+        e.y = random(height)
     }
 }
